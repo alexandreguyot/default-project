@@ -2,7 +2,7 @@
     <div class="card-controls sm:flex">
         <div class="w-full sm:w-1/2">
             Per page:
-            <select wire:model="perPage" class="form-select w-full sm:w-1/6">
+            <select wire:model.live="perPage" class="form-select w-full sm:w-1/6">
                 @foreach($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
@@ -26,7 +26,7 @@
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
             Search:
-            <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
+            <input type="text" wire:model.live.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
     <div wire:loading.delay>
@@ -88,7 +88,7 @@
                     @forelse($crmCustomers as $crmCustomer)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $crmCustomer->id }}" wire:model="selected">
+                                <input type="checkbox" value="{{ $crmCustomer->id }}" wire:model.live="selected">
                             </td>
                             <td>
                                 {{ $crmCustomer->id }}
@@ -129,12 +129,12 @@
                             <td>
                                 <div class="flex justify-end">
                                     @can('crm_customer_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.crm-customers.show', $crmCustomer) }}">
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('crm-customers.show', $crmCustomer) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('crm_customer_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.crm-customers.edit', $crmCustomer) }}">
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('crm-customers.edit', $crmCustomer) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan

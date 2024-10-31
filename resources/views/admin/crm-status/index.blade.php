@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('crm_status_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.crm-statuses.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('crm-statuses.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.crmStatus.title_singular') }}
                     </a>
                 @endcan

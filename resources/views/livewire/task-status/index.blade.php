@@ -2,7 +2,7 @@
     <div class="card-controls sm:flex">
         <div class="w-full sm:w-1/2">
             Per page:
-            <select wire:model="perPage" class="form-select w-full sm:w-1/6">
+            <select wire:model.live="perPage" class="form-select w-full sm:w-1/6">
                 @foreach($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
@@ -26,7 +26,7 @@
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
             Search:
-            <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
+            <input type="text" wire:model.live.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
     <div wire:loading.delay>
@@ -56,7 +56,7 @@
                     @forelse($taskStatuses as $taskStatus)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $taskStatus->id }}" wire:model="selected">
+                                <input type="checkbox" value="{{ $taskStatus->id }}" wire:model.live="selected">
                             </td>
                             <td>
                                 {{ $taskStatus->id }}
@@ -67,12 +67,12 @@
                             <td>
                                 <div class="flex justify-end">
                                     @can('task_status_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.task-statuses.show', $taskStatus) }}">
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('task-statuses.show', $taskStatus) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('task_status_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.task-statuses.edit', $taskStatus) }}">
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('task-statuses.edit', $taskStatus) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan

@@ -114,11 +114,11 @@
             </div>
             <div class="form-group">
                 @can('lesson_edit')
-                    <a href="{{ route('admin.lessons.edit', $lesson) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('lessons.edit', $lesson) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.lessons.index') }}" class="btn btn-secondary">
+                <a href="{{ route('lessons.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

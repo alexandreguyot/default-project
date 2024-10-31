@@ -2,7 +2,7 @@
     <div class="card-controls sm:flex">
         <div class="w-full sm:w-1/2">
             Per page:
-            <select wire:model="perPage" class="form-select w-full sm:w-1/6">
+            <select wire:model.live="perPage" class="form-select w-full sm:w-1/6">
                 @foreach($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
@@ -26,7 +26,7 @@
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
             Search:
-            <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
+            <input type="text" wire:model.live.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
     <div wire:loading.delay>
@@ -84,7 +84,7 @@
                     @forelse($contactContacts as $contactContact)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $contactContact->id }}" wire:model="selected">
+                                <input type="checkbox" value="{{ $contactContact->id }}" wire:model.live="selected">
                             </td>
                             <td>
                                 {{ $contactContact->id }}
@@ -118,12 +118,12 @@
                             <td>
                                 <div class="flex justify-end">
                                     @can('contact_contact_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.contact-contacts.show', $contactContact) }}">
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('contact-contacts.show', $contactContact) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('contact_contact_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.contact-contacts.edit', $contactContact) }}">
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('contact-contacts.edit', $contactContact) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan

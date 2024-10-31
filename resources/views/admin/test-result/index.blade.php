@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('test_result_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.test-results.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('test-results.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.testResult.title_singular') }}
                     </a>
                 @endcan

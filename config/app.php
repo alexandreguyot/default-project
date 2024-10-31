@@ -56,7 +56,11 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL', '/'),
+    'asset_url' => env('ASSET_URL', null),
+
+    'base_url' => env('APP_BASEURL', 'localhost'), // NEW
+
+    'admin_subdomain' => env('APP_SUBDOMAIN_URL', 'admin'), // NEW
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +86,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------

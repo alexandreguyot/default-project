@@ -16,7 +16,7 @@ class TaskCalendarController extends Controller
                 return [
                     'title' => $task->name,
                     'start' => Carbon::createFromFormat(config('project.date_format'), $task->due_date)->format('Y-m-d'),
-                    'url'   => route('admin.tasks.show', $task),
+                    'url'   => route('tasks.show', $task),
                 ];
             });
 

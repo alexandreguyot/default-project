@@ -58,11 +58,11 @@
             </div>
             <div class="form-group">
                 @can('product_category_edit')
-                    <a href="{{ route('admin.product-categories.edit', $productCategory) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('product-categories.edit', $productCategory) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.product-categories.index') }}" class="btn btn-secondary">
+                <a href="{{ route('product-categories.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

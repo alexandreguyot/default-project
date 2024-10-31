@@ -38,11 +38,11 @@
             </div>
             <div class="form-group">
                 @can('permission_edit')
-                    <a href="{{ route('admin.permissions.edit', $permission) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('permissions.edit', $permission) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.permissions.index') }}" class="btn btn-secondary">
+                <a href="{{ route('permissions.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

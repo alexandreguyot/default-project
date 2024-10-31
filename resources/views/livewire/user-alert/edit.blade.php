@@ -1,8 +1,8 @@
-<form wire:submit.prevent="submit" class="pt-3">
+<form wire:submit="submit" class="pt-3">
 
     <div class="form-group {{ $errors->has('userAlert.message') ? 'invalid' : '' }}">
         <label class="form-label required" for="message">{{ trans('cruds.userAlert.fields.message') }}</label>
-        <input class="form-control" type="text" name="message" id="message" required wire:model.defer="userAlert.message">
+        <input class="form-control" type="text" name="message" id="message" required wire:model="userAlert.message">
         <div class="validation-message">
             {{ $errors->first('userAlert.message') }}
         </div>
@@ -12,7 +12,7 @@
     </div>
     <div class="form-group {{ $errors->has('userAlert.link') ? 'invalid' : '' }}">
         <label class="form-label" for="link">{{ trans('cruds.userAlert.fields.link') }}</label>
-        <input class="form-control" type="text" name="link" id="link" wire:model.defer="userAlert.link">
+        <input class="form-control" type="text" name="link" id="link" wire:model="userAlert.link">
         <div class="validation-message">
             {{ $errors->first('userAlert.link') }}
         </div>
@@ -22,7 +22,7 @@
     </div>
     <div class="form-group {{ $errors->has('users') ? 'invalid' : '' }}">
         <label class="form-label required" for="users">{{ trans('cruds.userAlert.fields.users') }}</label>
-        <x-select-list class="form-control" required id="users" name="users" wire:model="users" :options="$this->listsForFields['users']" multiple />
+        <x-select-list class="form-control" required id="users" name="users" wire:model.live="users" :options="$this->listsForFields['users']" multiple />
         <div class="validation-message">
             {{ $errors->first('users') }}
         </div>
@@ -35,7 +35,7 @@
         <button class="btn btn-indigo mr-2" type="submit">
             {{ trans('global.save') }}
         </button>
-        <a href="{{ route('admin.user-alerts.index') }}" class="btn btn-secondary">
+        <a href="{{ route('user-alerts.index') }}" class="btn btn-secondary">
             {{ trans('global.cancel') }}
         </a>
     </div>

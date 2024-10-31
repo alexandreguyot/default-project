@@ -61,7 +61,7 @@ class MessageController extends Controller
 
         $conversation->updateSeenAt();
 
-        return redirect()->route('admin.messages.show', $conversation);
+        return redirect()->route('messages.show', $conversation);
     }
 
     public function show(ImConversation $conversation)
@@ -84,7 +84,7 @@ class MessageController extends Controller
 
         $conversation->updateSeenAt();
 
-        return redirect()->route('admin.messages.show', $conversation);
+        return redirect()->route('messages.show', $conversation);
     }
 
     public function destroy(DestroyMessageRequest $request, ImConversation $conversation)

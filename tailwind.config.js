@@ -2,23 +2,18 @@ const plugin = require("tailwindcss/plugin")
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: {
-    enabled: false,
-    content: ['./resources/views/**/*.blade.php', './safelist.txt'],
-    options: {
-      safelist: []
-    }
-  },
+  content: ['./resources/views/**/*.blade.php', './safelist.txt'],
   theme: {
     extend: {
       colors: {
         indigo: colors.indigo,
         rose: colors.rose,
-        blueGray: colors.blueGray,
+        slate: require('tailwindcss/colors').slate,
         lightBlue: colors.sky,
         orange: colors.orange,
-        red: colors.red
+        red: colors.red,
+        axemploiBlue: "#0E78AD",
+        axemploiRed: "#e64d3c",
       },
       minHeight: {
         'screen-75': '75vh'

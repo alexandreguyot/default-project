@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('user_alert_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.user-alerts.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('user-alerts.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.userAlert.title_singular') }}
                     </a>
                 @endcan

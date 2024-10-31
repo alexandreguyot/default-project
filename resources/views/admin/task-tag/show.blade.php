@@ -38,11 +38,11 @@
             </div>
             <div class="form-group">
                 @can('task_tag_edit')
-                    <a href="{{ route('admin.task-tags.edit', $taskTag) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('task-tags.edit', $taskTag) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.task-tags.index') }}" class="btn btn-secondary">
+                <a href="{{ route('task-tags.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

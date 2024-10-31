@@ -14,7 +14,7 @@
 
 @push('scripts')
     <script>
-        document.addEventListener("livewire:load", () => {
+        document.addEventListener("livewire:init", () => {
     function update(value) {
         let el = document.getElementById('clear-{{ $attributes['id'] }}')
 
@@ -28,7 +28,7 @@
             el.classList.remove('invisible')
         }
 
-@this.set('{{ $attributes['wire:model'] }}', value)
+@this.set('{{ $attributes['wire:model.live'] }}', value)
     }
 
 @if($attributes['picker'] === 'date')

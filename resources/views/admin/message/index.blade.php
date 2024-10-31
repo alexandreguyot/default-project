@@ -30,12 +30,12 @@
                                 @forelse($conversations as $conversation)
                                     <tr class="cursor-pointer" x-data="{ 'isUnread': @json($conversation->is_unread) }">
                                         <td class="p-0">
-                                            <a href="{{ route('admin.messages.show', $conversation) }}" class="block px-4 py-2" :class="{ 'font-bold': isUnread }">
+                                            <a href="{{ route('messages.show', $conversation) }}" class="block px-4 py-2" :class="{ 'font-bold': isUnread }">
                                                 {{ $conversation->subject }}
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.messages.show', $conversation) }}" class="block px-4 py-2 text-xs" :class="{ 'font-bold': isUnread }">
+                                            <a href="{{ route('messages.show', $conversation) }}" class="block px-4 py-2 text-xs" :class="{ 'font-bold': isUnread }">
                                                 @foreach($conversation->recipients->reject(function($user) {
                                                     return $user->id === auth()->id();
                                                     }) as $user)
@@ -46,7 +46,7 @@
                                         </td>
                                         <td class="px-4 py-2">
                                             <div class="flex justify-end">
-                                                <form action="{{ route('admin.messages.destroy', $conversation) }}" method="POST">
+                                                <form action="{{ route('messages.destroy', $conversation) }}" method="POST">
                                                     @csrf
                                                     <button class="btn btn-sm btn-rose mr-2" type="submit">
                                                         {{ __('global.delete') }}

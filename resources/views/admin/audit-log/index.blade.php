@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('audit_log_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.audit-logs.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('audit-logs.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.auditLog.title_singular') }}
                     </a>
                 @endcan

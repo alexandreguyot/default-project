@@ -48,11 +48,11 @@
             </div>
             <div class="form-group">
                 @can('role_edit')
-                    <a href="{{ route('admin.roles.edit', $role) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('roles.edit', $role) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">
+                <a href="{{ route('roles.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

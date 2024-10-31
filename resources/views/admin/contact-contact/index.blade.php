@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('contact_contact_create')
-                    <a class="btn btn-indigo" href="{{ route('admin.contact-contacts.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('contact-contacts.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.contactContact.title_singular') }}
                     </a>
                 @endcan
