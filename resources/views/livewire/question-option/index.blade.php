@@ -2,7 +2,7 @@
     <div class="card-controls sm:flex">
         <div class="w-full sm:w-1/2">
             Per page:
-            <select wire:model.live="perPage" class="form-select w-full sm:w-1/6">
+            <select wire:model="perPage" class="form-select w-full sm:w-1/6">
                 @foreach($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
@@ -26,7 +26,7 @@
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
             Search:
-            <input type="text" wire:model.live.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
+            <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
     <div wire:loading.delay>
@@ -64,7 +64,7 @@
                     @forelse($questionOptions as $questionOption)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $questionOption->id }}" wire:model.live="selected">
+                                <input type="checkbox" value="{{ $questionOption->id }}" wire:model="selected">
                             </td>
                             <td>
                                 {{ $questionOption->id }}
@@ -83,12 +83,12 @@
                             <td>
                                 <div class="flex justify-end">
                                     @can('question_option_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('question-options.show', $questionOption) }}">
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.question-options.show', $questionOption) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('question_option_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('question-options.edit', $questionOption) }}">
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.question-options.edit', $questionOption) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan

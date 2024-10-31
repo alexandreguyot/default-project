@@ -1,8 +1,8 @@
-<form wire:submit="submit" class="pt-3">
+<form wire:submit.prevent="submit" class="pt-3">
 
     <div class="form-group {{ $errors->has('productTag.name') ? 'invalid' : '' }}">
         <label class="form-label required" for="name">{{ trans('cruds.productTag.fields.name') }}</label>
-        <input class="form-control" type="text" name="name" id="name" required wire:model="productTag.name">
+        <input class="form-control" type="text" name="name" id="name" required wire:model.defer="productTag.name">
         <div class="validation-message">
             {{ $errors->first('productTag.name') }}
         </div>
@@ -15,7 +15,7 @@
         <button class="btn btn-indigo mr-2" type="submit">
             {{ trans('global.save') }}
         </button>
-        <a href="{{ route('product-tags.index') }}" class="btn btn-secondary">
+        <a href="{{ route('admin.product-tags.index') }}" class="btn btn-secondary">
             {{ trans('global.cancel') }}
         </a>
     </div>

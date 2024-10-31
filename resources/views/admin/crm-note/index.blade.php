@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('crm_note_create')
-                    <a class="btn btn-indigo" href="{{ route('crm-notes.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.crm-notes.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.crmNote.title_singular') }}
                     </a>
                 @endcan

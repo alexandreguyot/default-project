@@ -2,7 +2,7 @@
     <div class="card-controls sm:flex">
         <div class="w-full sm:w-1/2">
             Per page:
-            <select wire:model.live="perPage" class="form-select w-full sm:w-1/6">
+            <select wire:model="perPage" class="form-select w-full sm:w-1/6">
                 @foreach($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
@@ -26,7 +26,7 @@
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
             Search:
-            <input type="text" wire:model.live.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
+            <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
     <div wire:loading.delay>
@@ -86,7 +86,7 @@
                     @forelse($lessons as $lesson)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $lesson->id }}" wire:model.live="selected">
+                                <input type="checkbox" value="{{ $lesson->id }}" wire:model="selected">
                             </td>
                             <td>
                                 {{ $lesson->id }}
@@ -133,12 +133,12 @@
                             <td>
                                 <div class="flex justify-end">
                                     @can('lesson_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('lessons.show', $lesson) }}">
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.lessons.show', $lesson) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('lesson_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('lessons.edit', $lesson) }}">
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.lessons.edit', $lesson) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan

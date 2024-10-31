@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="card-body bg-blueGray-100 hidden" :class="{ 'hidden': replyHidden === true }">
-                    <form action="{{ route('messages.update', $conversation) }}" method="POST" class="pt-3">
+                    <form action="{{ route('admin.messages.update', $conversation) }}" method="POST" class="pt-3">
                         @csrf
                         <div class="form-group {{ $errors->has('body') ? 'invalid' : '' }}">
                             <textarea class="form-control" name="body" id="body" rows="8" required placeholder="{{ __('global.body') }}"></textarea>

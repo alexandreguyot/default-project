@@ -108,11 +108,11 @@
             </div>
             <div class="form-group">
                 @can('crm_customer_edit')
-                    <a href="{{ route('crm-customers.edit', $crmCustomer) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('admin.crm-customers.edit', $crmCustomer) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('crm-customers.index') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.crm-customers.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

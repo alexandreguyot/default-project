@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('content_category_create')
-                    <a class="btn btn-indigo" href="{{ route('content-categories.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.content-categories.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.contentCategory.title_singular') }}
                     </a>
                 @endcan

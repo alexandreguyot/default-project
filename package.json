@@ -11,7 +11,8 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.2.1",
-        "autoprefixer": "^10.4.20",
+        "@tailwindcss/jit": "^0.1.18",
+        "autoprefixer": "^10.2.5",
         "axios": "^0.21.1",
         "browser-sync": "^2.26.14",
         "browser-sync-webpack-plugin": "^2.3.0",
@@ -21,9 +22,9 @@
         "jquery": "^3.2",
         "laravel-mix": "^6.0.18",
         "lodash": "^4.17.19",
-        "postcss": "^8.4.47",
+        "postcss": "^8.2.14",
         "resolve-url-loader": "^3.1.2",
         "select2": "^4.0.13",
-        "tailwindcss": "^3.4.14"
+        "tailwindcss": "^2.1.2"
     }
 }

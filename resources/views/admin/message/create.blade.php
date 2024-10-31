@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('messages.store') }}" method="POST" class="pt-3">
+                    <form action="{{ route('admin.messages.store') }}" method="POST" class="pt-3">
                         @csrf
                         <div class="form-group {{ $errors->has('to') ? 'invalid' : '' }}">
                             <div class="flex flex-col lg:flex-row lg:items-center">
@@ -58,7 +58,7 @@
                             <button class="btn btn-indigo mr-2" type="submit">
                                 {{ trans('global.send') }}
                             </button>
-                            <a href="{{ route('messages.index') }}" class="btn btn-secondary">
+                            <a href="{{ route('admin.messages.index') }}" class="btn btn-secondary">
                                 {{ trans('global.discard') }}
                             </a>
                         </div>

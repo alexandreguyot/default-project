@@ -2,7 +2,7 @@
     <div class="card-controls sm:flex">
         <div class="w-full sm:w-1/2">
             Per page:
-            <select wire:model.live="perPage" class="form-select w-full sm:w-1/6">
+            <select wire:model="perPage" class="form-select w-full sm:w-1/6">
                 @foreach($paginationOptions as $value)
                     <option value="{{ $value }}">{{ $value }}</option>
                 @endforeach
@@ -26,7 +26,7 @@
         </div>
         <div class="w-full sm:w-1/2 sm:text-right">
             Search:
-            <input type="text" wire:model.live.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
+            <input type="text" wire:model.debounce.300ms="search" class="w-full sm:w-1/3 inline-block" />
         </div>
     </div>
     <div wire:loading.delay>
@@ -69,7 +69,7 @@
                     @forelse($contentPages as $contentPage)
                         <tr>
                             <td>
-                                <input type="checkbox" value="{{ $contentPage->id }}" wire:model.live="selected">
+                                <input type="checkbox" value="{{ $contentPage->id }}" wire:model="selected">
                             </td>
                             <td>
                                 {{ $contentPage->id }}
@@ -100,12 +100,12 @@
                             <td>
                                 <div class="flex justify-end">
                                     @can('content_page_show')
-                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('content-pages.show', $contentPage) }}">
+                                        <a class="btn btn-sm btn-info mr-2" href="{{ route('admin.content-pages.show', $contentPage) }}">
                                             {{ trans('global.view') }}
                                         </a>
                                     @endcan
                                     @can('content_page_edit')
-                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('content-pages.edit', $contentPage) }}">
+                                        <a class="btn btn-sm btn-success mr-2" href="{{ route('admin.content-pages.edit', $contentPage) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan

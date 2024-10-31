@@ -12,6 +12,10 @@ return [
             'title'      => 'French',
             'short_code' => 'fr',
         ],
+        [
+            'title'      => 'English',
+            'short_code' => 'en',
+        ],
     ],
     'registered_user_role' => 'User',
     'pagination'           => [

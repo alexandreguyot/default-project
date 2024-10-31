@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('content_tag_create')
-                    <a class="btn btn-indigo" href="{{ route('content-tags.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.content-tags.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.contentTag.title_singular') }}
                     </a>
                 @endcan

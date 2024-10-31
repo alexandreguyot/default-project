@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('role_create')
-                    <a class="btn btn-indigo" href="{{ route('roles.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.roles.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.role.title_singular') }}
                     </a>
                 @endcan

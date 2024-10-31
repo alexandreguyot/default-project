@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('faq_question_create')
-                    <a class="btn btn-indigo" href="{{ route('faq-questions.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.faq-questions.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.faqQuestion.title_singular') }}
                     </a>
                 @endcan
