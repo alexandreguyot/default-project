@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('content_page_create')
-                    <a class="btn btn-indigo" href="{{ route('content-pages.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.content-pages.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.contentPage.title_singular') }}
                     </a>
                 @endcan

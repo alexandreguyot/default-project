@@ -56,11 +56,11 @@
             </div>
             <div class="form-group">
                 @can('faq_question_edit')
-                    <a href="{{ route('faq-questions.edit', $faqQuestion) }}" class="btn btn-indigo mr-2">
+                    <a href="{{ route('admin.faq-questions.edit', $faqQuestion) }}" class="btn btn-indigo mr-2">
                         {{ trans('global.edit') }}
                     </a>
                 @endcan
-                <a href="{{ route('faq-questions.index') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.faq-questions.index') }}" class="btn btn-secondary">
                     {{ trans('global.back') }}
                 </a>
             </div>

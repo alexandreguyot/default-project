@@ -12,13 +12,13 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'id'                => 1,
-                'name'              => 'Alexandre Guyot',
-                'email'             => 'a.pro.guyot@gmail.com',
-                'password'          => bcrypt('alex'),
+                'name'              => 'Admin',
+                'email'             => 'admin@admin.com',
+                'password'          => bcrypt('password'),
                 'remember_token'    => null,
                 'email_verified_at' => now(),
                 'is_approved'       => true,
-                'locale'            => 'fr',
+                'locale'            => '',
             ],
         ];
 

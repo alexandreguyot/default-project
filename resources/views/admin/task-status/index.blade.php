@@ -10,7 +10,7 @@
                 </h6>
 
                 @can('task_status_create')
-                    <a class="btn btn-indigo" href="{{ route('task-statuses.create') }}">
+                    <a class="btn btn-indigo" href="{{ route('admin.task-statuses.create') }}">
                         {{ trans('global.add') }} {{ trans('cruds.taskStatus.title_singular') }}
                     </a>
                 @endcan
