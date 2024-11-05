@@ -40,8 +40,8 @@
             </li>
         </ul>
 
-
-        @if(file_exists(app_path('Http/Livewire/LanguageSwitcher.php')))
+        @dd(file_exists(app_path('Livewire/LanguageSwitcher.php')))
+        @if(file_exists(app_path('Livewire/LanguageSwitcher.php')))
             <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
                 <livewire:language-switcher />
             </ul>

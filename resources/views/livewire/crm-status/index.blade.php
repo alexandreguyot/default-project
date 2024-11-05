@@ -14,7 +14,7 @@
                 </button>
             @endcan
 
-            @if(file_exists(app_path('Http/Livewire/ExcelExport.php')))
+            @if(file_exists(app_path('Livewire/ExcelExport.php')))
                 <livewire:excel-export model="CrmStatus" format="csv" />
                 <livewire:excel-export model="CrmStatus" format="xlsx" />
                 <livewire:excel-export model="CrmStatus" format="pdf" />

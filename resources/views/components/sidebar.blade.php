@@ -30,7 +30,7 @@
 
             <!-- Divider -->
             <div class="flex md:hidden">
-                @if(file_exists(app_path('Http/Livewire/LanguageSwitcher.php')))
+                @if(file_exists(app_path('Livewire/LanguageSwitcher.php')))
                     <livewire:language-switcher />
                 @endif
             </div>
